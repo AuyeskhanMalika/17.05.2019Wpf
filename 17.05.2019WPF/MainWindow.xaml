@@ -9,6 +9,7 @@
     <StackPanel>
         <Grid Background="#FAEBD7">
             <Grid.RowDefinitions >
+                <RowDefinition Height="200*"/>
                 <RowDefinition Height="400*"/>
             </Grid.RowDefinitions>
 
@@ -29,35 +30,32 @@
             <Label Content="Дата выдачи" HorizontalAlignment="Left" Height="25" Margin="477,60,0,0" VerticalAlignment="Top" Width="90"/>
             <Label Content="Должность" HorizontalAlignment="Left" Height="25" Margin="477,100,0,0" VerticalAlignment="Top" Width="80"/>
             <Label Content="Номер справки" HorizontalAlignment="Left" Height="25" Margin="477 140 0 0" VerticalAlignment="Top" Width="110"/>
-
-            <MenuItem Header="" VerticalAlignment="Top" Margin="0,0,127,0">
-                <MenuItem Header="Печать" Command="{Binding PrintCommand}" Click="MenuItemClick" Visibility="Visible"/>
-            </MenuItem>
+            <Button Content="Печать" Command="{Binding PrintCommand}" Click="MenuItemClick" Visibility="Visible" Grid.Row="1"/>
         </Grid>
         <Grid>
             <FlowDocumentReader Name="Reference" Margin="10 0 10 0" Height="395" Width="750" VerticalAlignment="Top">
                 <FlowDocument Name="flowDocument">
                     <Paragraph>
                         <Run Text="Выдано "/>
-                        <TextBlock Text="{Binding Path=Text, ElementName=companyTextBox}" Height="25" Width="165" TextWrapping="Wrap"/>
+                        <TextBlock Text="{Binding Path=Text, ElementName=companyTextBox}" Height="auto" Width="auto" TextWrapping="Wrap"/>
                         <Run Text="находящейся по адресу "/>
-                        <TextBlock Text="{Binding Path=Text,ElementName=addressTextBox}" Height="25" Width="165" TextWrapping="Wrap"/>
+                        <TextBlock Text="{Binding Path=Text,ElementName=addressTextBox}" Height="auto" Width="auto" TextWrapping="Wrap"/>
                     </Paragraph>
                     <Paragraph>
                         <Run Text="Дана"/>
-                        <TextBlock Text="{Binding Path=Text, ElementName=fioTextBox}" Height="25" Width="250" TextWrapping="Wrap">
+                        <TextBlock Text="{Binding Path=Text, ElementName=fioTextBox}" Height="auto" Width="auto" TextWrapping="Wrap">
                             <Run />
                         </TextBlock>
                         <Run Text=", в подтверждение того, что он с"/>
-                        <TextBlock Text="{Binding Path=Text, ElementName=dateFromTextBox}" Height="25" Width="165" TextWrapping="Wrap"/>
+                        <TextBlock Text="{Binding Path=Text, ElementName=dateFromTextBox}" Height="auto" Width="auto" TextWrapping="Wrap"/>
                         <Run Text=" по настоящее время работает в"/>
-                        <TextBlock Text="{Binding Path=Text, ElementName=companyTextBox}" Height="25" Width="165" TextWrapping="Wrap"/>
+                        <TextBlock Text="{Binding Path=Text, ElementName=companyTextBox}" Height="auto" Width="auto" TextWrapping="Wrap"/>
                         <Run Text=" на должности "/>
-                        <TextBlock Text="{Binding Path=Text, ElementName=positionTextBox}" Height="25" Width="165" TextWrapping="Wrap"/>
+                        <TextBlock Text="{Binding Path=Text, ElementName=positionTextBox}" Height="auto" Width="auto" TextWrapping="Wrap"/>
                         <Run Text="Ежемесячный должностной оклад  "/>
-                        <TextBlock Text="{Binding Path=Text, ElementName=fioTextBox}" Height="25" Width="165" TextWrapping="Wrap"/>
+                        <TextBlock Text="{Binding Path=Text, ElementName=fioTextBox}" Height="auto" Width="auto" TextWrapping="Wrap"/>
                         <Run Text=" составляет  "/>
-                        <TextBlock Text="{Binding Path=Text, ElementName=salaryTextBox}" Height="25" Width="165" TextWrapping="Wrap"/>
+                        <TextBlock Text="{Binding Path=Text, ElementName=salaryTextBox}" Height="auto" Width="auto" TextWrapping="Wrap"/>
                         <Run Text=" тенге  "/>
                         <Run Text="Настоящая справка подлежит предъявлению по месту требования.  "/>
                     </Paragraph>
