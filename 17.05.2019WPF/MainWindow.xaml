@@ -30,9 +30,12 @@
             <Label Content="Должность" HorizontalAlignment="Left" Height="25" Margin="477,100,0,0" VerticalAlignment="Top" Width="80"/>
             <Label Content="Номер справки" HorizontalAlignment="Left" Height="25" Margin="477 140 0 0" VerticalAlignment="Top" Width="110"/>
 
+            <MenuItem Header="" VerticalAlignment="Top" Margin="0,0,127,0">
+                <MenuItem Header="Печать" Command="{Binding PrintCommand}" Click="MenuItemClick" Visibility="Visible"/>
+            </MenuItem>
         </Grid>
         <Grid>
-            <FlowDocumentReader Margin="10 0 10 0" Height="395" Width="750" VerticalAlignment="Top">
+            <FlowDocumentReader Name="Reference" Margin="10 0 10 0" Height="395" Width="750" VerticalAlignment="Top">
                 <FlowDocument Name="flowDocument">
                     <Paragraph>
                         <Run Text="Выдано "/>

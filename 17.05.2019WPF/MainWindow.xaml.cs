@@ -24,5 +24,14 @@ namespace _17._05._2019WPF
         {
             InitializeComponent();
         }
+
+        private void MenuItemClick(object sender, RoutedEventArgs e)
+        {
+            PrintDialog printDialog = new PrintDialog();
+            if (printDialog.ShowDialog() == true)
+            {
+                printDialog.PrintVisual(Reference, "Printing in process");
+            }
+        }
     }
 }
